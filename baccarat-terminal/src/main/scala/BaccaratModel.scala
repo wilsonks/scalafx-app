@@ -1,10 +1,10 @@
 
 import java.util.ArrayList
 
-import better.files.{File, FileMonitor}
-import File._
+import better.files.File
+import better.files.File._
 import customjavafx.scene.control.BeadRoadResult
-import fs2.io.fx.{Data, Header, Promo}
+import fs2.io.fx.{Data, Header}
 import javafx.beans.property.{ListProperty, SimpleListProperty, SimpleStringProperty, StringProperty}
 import javafx.collections.FXCollections
 import javafx.scene.input.KeyCode
@@ -13,8 +13,8 @@ class BaccaratModel {
 
   val dataDB: File = File(pureconfig.loadConfigOrThrow[String]("game.database.data"))
   val headerDB: File = File(pureconfig.loadConfigOrThrow[String]("game.database.menu"))
-  var mediaIndex = 0
-  def mediaCount: Int = getVideoFiles(dir = home).size
+  val keysMap: Map[KeyCode, String] = pureconfig.loadConfigOrThrow[Map[KeyCode, String]]("keyboard.keys")
+  val coupsMap: Map[String, BeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, BeadRoadResult]]("keyboard.coups")
 
   //Load KeyBoard Information from application.conf
   implicit def keyCodeReader: pureconfig.ConfigReader[Map[KeyCode, String]] = {
@@ -28,11 +28,6 @@ class BaccaratModel {
       case (k, v) => (k, BeadRoadResult.valueOf(v))
     })
   }
-
-  val keysMap: Map[KeyCode, String] = pureconfig.loadConfigOrThrow[Map[KeyCode, String]]("keyboard.keys")
-  val coupsMap: Map[String, BeadRoadResult] = pureconfig.loadConfigOrThrow[Map[String, BeadRoadResult]]("keyboard.coups")
-
-
   //Define Data Elements & Getter Methods
   private val tableId: StringProperty = new SimpleStringProperty("")
   private val handBetMin: StringProperty = new SimpleStringProperty("")
@@ -44,6 +39,7 @@ class BaccaratModel {
   private val superSixBetMin: StringProperty = new SimpleStringProperty("")
   private val superSixBetMax: StringProperty = new SimpleStringProperty("")
   private val beadRoadList: ListProperty[BeadRoadResult] = new SimpleListProperty[BeadRoadResult](FXCollections.observableList(new ArrayList[BeadRoadResult]))
+  var mediaIndex = 0
 
   def tableIdProperty: StringProperty = tableId
 
@@ -87,7 +83,6 @@ class BaccaratModel {
     }
   }
 
-
   def saveHeader(): Unit = {
     headerDB.writeSerialized(
       Header(
@@ -103,27 +98,22 @@ class BaccaratModel {
       ))
   }
 
-  def getVideoFiles(dir:File = home):List[String] = {
-    dir.list.filter(f => f.extension == Some(".mp4") || f.extension == Some(".avi"))
-      .map(f => f.path.toString)
-      .toList
-  }
-
-  def getVideoFilesRec(dir:File = home):List[String] = {
-    dir.listRecursively.filter(f => f.extension == Some(".mp4") || f.extension == Some(".avi"))
-      .map(f => f.path.toString)
-      .toList
-  }
-
-
   def getPromoMedia: String = {
-    if(mediaCount != 0) {
+    if (mediaCount != 0) {
       getVideoFiles().toArray.apply(mediaIndex)
     }
     else null
   }
 
-  def nextPromoMedia():Unit = {
+  def mediaCount: Int = getVideoFiles(dir = home).size
+
+  def getVideoFiles(dir: File = home): List[String] = {
+    dir.list.filter(f => f.extension == Some(".mp4") || f.extension == Some(".avi"))
+      .map(f => f.path.toString)
+      .toList
+  }
+
+  def nextPromoMedia(): Unit = {
     if (mediaCount != 0) {
       mediaIndex += 1
       mediaIndex = mediaIndex % mediaCount
@@ -132,19 +122,9 @@ class BaccaratModel {
 
   import scala.collection.JavaConverters._
 
-  def saveData():Unit = {
+  def saveData(): Unit = {
     dataDB.writeSerialized(Data(beadRoadList.asScala.toList.filter(x => x != BeadRoadResult.EMPTY)))
   }
 
-  val watchUSBInsert: FileMonitor = new FileMonitor(File("/media/"),recursive = true) {
-    override def onCreate(file: File, count: Int):Unit = {
-      println(s"$file got created")
-      getVideoFilesRec(file).foreach(println)
-    }
-  }
-
-  import scala.concurrent.ExecutionContext.Implicits.global
-
-  watchUSBInsert.start()
 
 }

@@ -3,6 +3,7 @@ import java.io.{File => JFile}
 
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
+import fs2.io.fx.{Data, Header}
 import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
 import javafx.scene.control.{Button, Label, TextField}
@@ -16,8 +17,6 @@ import scalafx.util.Duration
 import scalafxml.core.macros.sfxml
 import sodium.syntax._
 
-
-//The FXML Controller can be defined as simple scala class
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
 class DisplayHandlerNepal
 (
@@ -81,8 +80,8 @@ class DisplayHandlerNepal
 
   //Instantiate model
   val model = new BaccaratModel()
-  val data = model.loadData()
-  val header = model.loadHeader()
+  val data: Data = model.loadData()
+  val header: Header = model.loadHeader()
 
   dynamicResult.setVisible(false)
 
@@ -139,14 +138,14 @@ class DisplayHandlerNepal
   var promoOn = false
 
 
-
   if (java.awt.Toolkit.getDefaultToolkit.getLockingKeyState(java.awt.event.KeyEvent.VK_NUM_LOCK)) {
     menu.toFront()
     lList(mIndex).requestFocus()
     menuOn = true
   }
+  var mIndex: Int = 0
 
-  def lastWinUpdates():Unit = {
+  def lastWinUpdates(): Unit = {
     new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play()
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
     lastWinResultLabel.setText(beadRoad.LastWin())
@@ -157,9 +156,8 @@ class DisplayHandlerNepal
   }
 
   def playPromo(): Unit = {
-    if(model.getPromoMedia != null) {
+    if (model.getPromoMedia != null) {
       val f = new JFile(model.getPromoMedia)
-      println("Selected Promo Media: " + f.toURI.toString)
       media = new Media(f.toURI.toString)
       mediaPlayer = new MediaPlayer(media)
       mediaPlayer.setCycleCount(-1)
@@ -168,12 +166,12 @@ class DisplayHandlerNepal
       mediaPlayer.play()
     }
     else {
-      println("Promo Videos Not Found!")
+      println("Error: Promo Videos Not Found in!")
     }
   }
 
-  def stopPromo():Unit = {
-    if(model.getPromoMedia != null) mediaPlayer.dispose()
+  def stopPromo(): Unit = {
+    if (model.getPromoMedia != null) mediaPlayer.dispose()
 
   }
 
@@ -304,9 +302,6 @@ class DisplayHandlerNepal
     })
 
 
-  //model.getVideoFiles()
-  var mIndex: Int = 0
-
   def focusSame(): Unit = {
     lList(mIndex).requestFocus()
   }
@@ -325,7 +320,7 @@ class DisplayHandlerNepal
     .map(_.getCode)
     .filter(key => model.keysMap.contains(key))
     .transform(Option.empty[String]) {
-      case (KeyCode.ENTER,_) if promoOn => stopPromo();model.nextPromoMedia();playPromo();(None, None)
+      case (KeyCode.ENTER, _) if promoOn => stopPromo(); model.nextPromoMedia(); playPromo(); (None, None)
       case (KeyCode.ENTER, _) if menuOn && editOn => lList(mIndex).requestFocus(); editOn = !editOn; (None, None)
       case (KeyCode.ENTER, _) if menuOn => tList(mIndex).requestFocus(); editOn = !editOn; (None, None)
       case (KeyCode.ENTER, result) => gameBox.requestFocus(); (result, None)
