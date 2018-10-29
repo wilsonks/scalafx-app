@@ -39,11 +39,11 @@ seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,st
 turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 /*#cb0000, #50312f, black*/
-    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
-    style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
+    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #ff2052);
+    style2-color: radial-gradient(radius 180%, #fb8928, derive(white, -30%), derive(white, 30%));
     style3-color: white;
-    style4-color: #50312f;
-    style5-color: #3f6c45;
+    style4-color: #2a3240;
+    style5-color: #f6bd6a;
     style6-color: black;
 	-fx-background-color: style1-color;
 	-fx-padding: 10 5 5 5;
