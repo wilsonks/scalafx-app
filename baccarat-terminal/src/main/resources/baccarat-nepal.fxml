@@ -155,7 +155,7 @@
                     <children>
                         <Label fx:id="nameLabel" styleClass="tableName" text="%nameLabel" />
                   <Label fx:id="tableId" layoutX="822.0" layoutY="13.0" minWidth="600.0" styleClass="tableId" text="001" />
-                  <Label layoutX="10.0" layoutY="13.0" styleClass="gameHeader" text="百家乐 BACCARAT" />
+                  <Label layoutX="10.0" layoutY="13.0" styleClass="gameHeader" text="%gameName" />
                     </children>
                 </HBox>
                 <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">

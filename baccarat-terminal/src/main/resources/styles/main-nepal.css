@@ -38,13 +38,19 @@ peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,saddlebrown,s
 seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,
 turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
-/*#cb0000, #50312f, black*/
-    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #ff2052);
+/*#cb0000, #50312f, #deadb0 black*/
+    style1-color: #EFD9D4;
+    style4-color: #369586;
+    style6-color: midnightblue;
+    style2-color: red;
+    style3-color: white;
+
+    /*    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #ff2052);
     style2-color: radial-gradient(radius 180%, #fb8928, derive(white, -30%), derive(white, 30%));
     style3-color: white;
     style4-color: #2a3240;
     style5-color: #f6bd6a;
-    style6-color: black;
+    style6-color: black;*/
 	-fx-background-color: style1-color;
 	-fx-padding: 10 5 5 5;
 	-fx-spacing:5;
@@ -469,7 +475,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:30;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
 	-fx-pref-tile-width:24;
@@ -527,7 +533,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:30;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
 	-fx-pref-tile-width:24;
@@ -612,37 +618,14 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 }
 
 
-.BeadHeader {
-    -fx-padding: 0 0 0 0;
-    -fx-background-color: style2-color;
-/*    -fx-border-radius: 5 5 5 5;
-    -fx-background-radius: 5 5 5 5*/;
-    -fx-text-fill: black;
-    -fx-pref-width:200;
-    -fx-pref-height:25;
-    -fx-alignment:center;
-    -fx-font-family: 'Bodonio';
-    -fx-font-size: 18;
-    }
-
-.BigEyeRoadHeader {
-    -fx-padding: 0 0 0 0;
-    -fx-background-color: style2-color;
-/*    -fx-border-radius: 5 5 5 5;
-    -fx-background-radius: 5 5 5 5;*/
-    -fx-text-fill: black;
-    -fx-pref-width:200;
-    -fx-pref-height:25;
-    -fx-alignment:center;
-    -fx-font-family: 'Bodonio';
-    -fx-font-size: 18;
-    }
 
 .betsLogo {
-	-fx-background-image: url("../images/logo-small.png");
+	-fx-background-image: url("../images/logo-cp.png");
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
 	-fx-background-size: contain;
+	-fx-min-width:248;
+    -fx-min-height:82;
 }
 
 .betsRow {
@@ -687,61 +670,6 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
    	-fx-padding: 0 10 0 0;
 }
 
-
-    .menuHeader {
-    	-fx-font-family: 'Bauhaus';
-    	-fx-font-family: 'Book Antiqua Bold';
-    	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-    	-fx-font-size: 42;
-    }
-
-    .menuItems {
-    	-fx-font-family: 'Bauhaus';
-    	-fx-font-family: 'Book Antiqua Bold';
-    	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-    	-fx-font-size: 34;
-    }
-
-    .minLabel {
-    	-fx-text-fill: goldenrod;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 30;
-        -fx-alignment:center-right;
-
-    }
-
-    .maxLabel {
-    	-fx-text-fill: goldenrod;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 30;
-    	-fx-alignment:center-right;
-    }
-
-    .textField {
-        -fx-background-color: style2-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-    	-fx-text-fill: darkred;
-    	-fx-pref-width:250;
-        -fx-pref-height:25;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 32;
-
-    }
-
-    .textFieldRight {
-        -fx-background-color: white;
-        -fx-border-radius: 0 0 0 0;
-        -fx-background-radius: 0 0 0 0;
-    	-fx-text-fill: darkred;
-    	-fx-pref-width:200;
-        -fx-pref-height:78;
-        -fx-alignment:center-right;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 36;
-
-    }
 
 
 #totalCount {
@@ -926,7 +854,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-border-width: 1;
     -fx-border-radius: 5 5 5 5;
     -fx-background-radius: 5 5 5 5;
-    -fx-text-fill: lightgray;
+    -fx-text-fill: white;
     -fx-pref-width:1910;
     -fx-pref-height:25;
     -fx-alignment:center;

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import customjavafx.scene.control.BigEyeRoadLabel?>
+<?import customjavafx.scene.control.CockroachRoadLabel?>
+<?import customjavafx.scene.control.LastWinResultLabel?>
+<?import customjavafx.scene.control.SmallRoadLabel?>
+<?import customjavafx.scene.layout.BeadRoadTilePane?>
+<?import customjavafx.scene.layout.BigEyeRoadDummyTilePane?>
+<?import customjavafx.scene.layout.BigEyeRoadTilePane?>
+<?import customjavafx.scene.layout.BigRoadTilePane?>
+<?import customjavafx.scene.layout.CockroachRoadDummyTilePane?>
+<?import customjavafx.scene.layout.CockroachRoadTilePane?>
+<?import customjavafx.scene.layout.SmallRoadDummyTilePane?>
+<?import customjavafx.scene.layout.SmallRoadTilePane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<StackPane styleClass="root" stylesheets="@styles/main-nepal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplayHandlerNepal">
+    <children>
+        <Pane fx:id="promoPane" StackPane.alignment="CENTER">
+            <children>
+                <MediaView fx:id="promoMediaView" fitHeight="1080.0" fitWidth="1920.0" preserveRatio="false">
+                </MediaView>
+            </children>
+        </Pane>
+        <BorderPane fx:id="info" prefHeight="200.0" prefWidth="200.0">
+            <right>
+                <ImageView fitHeight="444.0" fitWidth="388.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
+                    <image>
+                        <Image url="@images/keypad.png" />
+                    </image>
+                </ImageView>
+            </right>
+            <StackPane.margin>
+                <Insets bottom="40.0" right="10.0" />
+            </StackPane.margin>
+        </BorderPane>
+        <BorderPane fx:id="menu">
+            <center>
+                <VBox maxHeight="370.0" maxWidth="330.0" prefWidth="385.0" spacing="5.0" styleClass="menuBox" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="341.0" styleClass="menuTitle" text="Menu" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="lTableId" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Table ID" />
+                        <TextField fx:id="tTableId" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="00">
+                           <font>
+                              <Font name="Bauhaus" size="20.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                        <HBox layoutX="10.0" layoutY="63.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lHandBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Min" />
+                                <TextField fx:id="tHandBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="168.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lHandBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Hand Bet Max" />
+                                <TextField fx:id="tHandBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="267.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lTieBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Min" />
+                                <TextField fx:id="tTieBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="100">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="292.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lTieBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Tie Bet Max" />
+                                <TextField fx:id="tTieBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="10000">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="307.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lPairBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Min" />
+                                <TextField fx:id="tPairBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="500">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lPairBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Pair Bet Max" />
+                                <TextField fx:id="tPairBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="324.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lSuperSixBetMin" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Min" />
+                                <TextField fx:id="tSuperSixBetMin" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="331.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Button fx:id="lSuperSixBetMax" mnemonicParsing="false" prefHeight="46.0" prefWidth="370.0" styleClass="menuLabels" text="Super Six Bet Max" />
+                                <TextField fx:id="tSuperSixBetMax" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="110.0" text="5000">
+                                    <font>
+                                        <Font name="Bauhaus" size="20.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </center>
+        </BorderPane>
+        <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" styleClass="game">
+            <children>
+                <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label fx:id="nameLabel" styleClass="tableName" text="%nameLabel" />
+                  <Label fx:id="tableId" layoutX="822.0" layoutY="13.0" minWidth="600.0" styleClass="tableId" text="001" />
+                  <Label layoutX="10.0" layoutY="13.0" styleClass="gameHeader" text="%gameName" />
+                    </children>
+                </HBox>
+                <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">
+                    <children>
+                        <BigRoadTilePane fx:id="bigRoad" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">
+                        </BigRoadTilePane>
+                    </children>
+                    <opaqueInsets>
+                        <Insets top="10.0" />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="8.0" right="5.0" />
+                    </VBox.margin>
+                </Pane>
+                <HBox alignment="CENTER" maxWidth="1910.0" spacing="10.0">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="24.0">
+                            <children>
+                                <Pane prefHeight="186.0" prefWidth="950.0" styleClass="BigEyeRoadPane">
+                                    <children>
+                                        <StackPane prefHeight="150.0" prefWidth="950.0">
+                                            <children>
+                                                <BigEyeRoadDummyTilePane fx:id="bigEyeRoadDummy" styleClass="BigEyeRoadDummyTilePane" />
+                                                <BigEyeRoadTilePane fx:id="bigEyeRoad" layoutX="10.0" layoutY="10.0" styleClass="BigEyeRoadTilePane" />
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </Pane>
+                                <Pane styleClass="SmallRoadPane">
+                                    <children>
+                                        <StackPane prefHeight="150.0" prefWidth="950.0">
+                                            <children>
+                                                <SmallRoadDummyTilePane fx:id="smallRoadDummy" layoutX="10.0" layoutY="10.0" styleClass="SmallRoadDummyTilePane" />
+                                                <SmallRoadTilePane fx:id="smallRoad" layoutX="10.0" layoutY="10.0" styleClass="SmallRoadTilePane" />
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </Pane>
+                            </children>
+                            <HBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <Pane styleClass="CockroachRoadPane">
+                            <children>
+                                <StackPane prefHeight="324.0" prefWidth="950.0">
+                                    <children>
+                                        <CockroachRoadDummyTilePane fx:id="cockroachRoadDummy" styleClass="CockroachRoadDummyTilePane" />
+                                        <CockroachRoadTilePane fx:id="cockroachRoad" layoutX="10.0" layoutY="10.0" styleClass="CockroachRoadTilePane" />
+                                    </children>
+                                </StackPane>
+                            </children>
+                            <HBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </HBox.margin>
+                        </Pane>
+                    </children>
+                    <VBox.margin>
+                        <Insets right="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <VBox alignment="TOP_CENTER" prefHeight="371.0" prefWidth="1910.0" spacing="5.0">
+                    <children>
+                        <HBox prefHeight="360.0" prefWidth="1909.0" spacing="10.0" styleClass="top" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Pane maxHeight="359.0" prefHeight="343.0" prefWidth="629.0" styleClass="BeadRoadPane">
+                                    <children>
+                                        <BeadRoadTilePane fx:id="beadRoad" styleClass="BeadRoadTilePane">
+                                        </BeadRoadTilePane>
+                                    </children>
+                                </Pane>
+                                <VBox alignment="TOP_CENTER" styleClass="betsRow" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="TOP_RIGHT" styleClass="betsRow">
+                              <ImageView fitHeight="82.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/logoCP.png" />
+                                 </image>
+                              </ImageView>
+                                        <Label fx:id="minLabel" styleClass="betsRange" text="%minLabel" />
+                                        <Label fx:id="maxLabel" styleClass="betsRange" text="%maxLabel" />
+                                    </HBox>
+                                    <HBox styleClass="betsRow">
+                                        <Label fx:id="handBetLabel" styleClass="betsType" text="%handBetLabel" />
+                                        <Label fx:id="handBetMin" styleClass="betValue" text="500" />
+                                        <Label fx:id="handBetMax" styleClass="betValue" text="500" />
+                                    </HBox>
+                                    <HBox styleClass="betsRow">
+                                        <Label fx:id="tieBetLabel" styleClass="betsType" text="%tieBetLabel" />
+                                        <Label fx:id="tieBetMin" styleClass="betValue" text="500" />
+                                        <Label fx:id="tieBetMax" styleClass="betValue" text="500" />
+                                    </HBox>
+                                    <HBox styleClass="betsRow">
+                                        <Label fx:id="pairBetLabel" styleClass="betsType" text="%pairBetLabel" />
+                                        <Label fx:id="pairBetMin" styleClass="betValue" text="500" />
+                                        <Label fx:id="pairBetMax" styleClass="betValue" text="500" />
+                                    </HBox>
+                                    <HBox styleClass="betsRow">
+                                        <Label fx:id="superSixLabel" styleClass="betsType" text="%superSixLabel" />
+                                        <Label fx:id="superBetMin" styleClass="betValue" text="500" />
+                                        <Label fx:id="superBetMax" styleClass="betValue" text="500" />
+                                    </HBox>
+                                </VBox>
+                                <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="450.0">
+                                    <children>
+                                        <StackPane prefHeight="359.0" prefWidth="400.0">
+                                            <children>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" spacing="1.0">
+                                                    <children>
+                                                        <HBox prefHeight="50.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Label maxWidth="110.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" />
+                                                                <Label fx:id="gameLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" text="%gameLabel">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="totalCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="1.0" />
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/bead-road/a.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="bLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: #e41d1d;" text="%bLabel" textFill="#f22c2c">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="bankerWinCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="61.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/bead-road/e.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="pLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: #3344c6;" text="%pLabel" textFill="#008cff">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="playerWinCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="112.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/bead-road/i.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="tLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: #44d72e;" text="%tLabel" textFill="#008cff">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="tieWinCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="1.0" />
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="61.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/bead-road/b.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="bpLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: #e41d1d;" text="%bpLabel" textFill="#f22c2c">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="bankerPairCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="112.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/bead-road/g.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="ppLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: #3344c6;" text="%ppLabel" textFill="#008cff">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="playerPairCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="1.0" />
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="265.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <HBox.margin>
+                                                                        <Insets left="20.0" right="20.0" />
+                                                                    </HBox.margin>
+                                                                    <image>
+                                                                        <Image url="@images/big-road/17.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Label fx:id="nLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: orange;" text="%nLabel" textFill="#008cff">
+                                                                    <font>
+                                                                        <Font name="Arctik 2.5" size="22.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="naturalCount" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                                                    <font>
+                                                                        <Font name="Arctik 3.5" size="20.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets right="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </VBox>
+                                <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="150.0" spacing="1.0">
+                                    <children>
+                                        <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                            <children>
+                                                <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                                <Region fx:id="RegionPredictionBanker" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                            <children>
+                                                <BigEyeRoadLabel fx:id="p1" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <BigEyeRoadLabel fx:id="b1" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                            <children>
+                                                <SmallRoadLabel fx:id="p2" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <SmallRoadLabel fx:id="b2" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                            <children>
+                                                <CockroachRoadLabel fx:id="p3" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <CockroachRoadLabel fx:id="b3" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets right="1.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="1.0" right="5.0" />
+                    </VBox.margin>
+                </VBox>
+                <VBox alignment="BOTTOM_CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="1910.0">
+                    <Label fx:id="footing" prefHeight="35.0" styleClass="FootLabel" text="Powered By Tykhe Gaming Pvt. Ltd.">
+                        <padding>
+                            <Insets bottom="5.0" />
+                        </padding>
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </Label>
+                </VBox>
+            </children>
+            <StackPane.margin>
+                <Insets left="5.0" />
+            </StackPane.margin>
+        </VBox>
+      <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <LastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" BorderPane.alignment="CENTER" />
+         </center></BorderPane>
+    </children>
+</StackPane>

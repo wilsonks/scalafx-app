@@ -434,10 +434,10 @@ public class BeadRoadTilePane extends TilePane {
     }
 
     public String LastWin() {
-        if (isCurrentWinRed()) return "莊 赢\nBanker Win";
-        else if (isCurrentWinBlue()) return "閒 赢\nPlayer Win";
+        if (isCurrentWinRed()) return "bWin";
+        else if (isCurrentWinBlue()) return "pWin";
         else {
-            return "和\nTie";
+            return "tWin";
         }
     }
 

@@ -1,5 +1,6 @@
 
 import java.io.{File => JFile}
+import java.util.ResourceBundle
 
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
@@ -76,7 +77,7 @@ class DisplayHandlerNepal
   val cockroachRoadDummy: CockroachRoadDummyTilePane,
   val bigRoad: BigRoadTilePane,
   val dynamicResult: BorderPane
-)(implicit display: fx.io.Display) {
+)(implicit display: fx.io.Display, res: Option[ResourceBundle]) {
 
   //Instantiate model
   val model = new BaccaratModel()
@@ -148,7 +149,7 @@ class DisplayHandlerNepal
   def lastWinUpdates(): Unit = {
     new AudioClip(getClass.getResource(beadRoad.LastWinAudio()).toExternalForm).play()
     lastWinResultLabel.setResult(beadRoad.LastWinResult())
-    lastWinResultLabel.setText(beadRoad.LastWin())
+    lastWinResultLabel.setText(res.get.getString(beadRoad.LastWin()))
     lastWinResultLabel.setAlignment(Pos.Center)
     dynamicResult.setVisible(true)
     lastWinPause.stop()
