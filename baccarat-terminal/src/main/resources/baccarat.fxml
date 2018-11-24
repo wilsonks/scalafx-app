@@ -27,7 +27,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane styleClass="root" stylesheets="@styles/main-nepal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplayHandlerNepal">
+<StackPane styleClass="root" stylesheets="@styles/main-goa.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplayHandlerGoa">
     <children>
         <Pane fx:id="promoPane" StackPane.alignment="CENTER">
             <children>
@@ -231,7 +231,7 @@
                                     <HBox alignment="TOP_RIGHT" styleClass="betsRow">
                               <ImageView fitHeight="82.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/logoCP.png" />
+                                    <Image url="@images/logo-cp.png" />
                                  </image>
                               </ImageView>
                                         <Label fx:id="minLabel" styleClass="betsRange" text="%minLabel" />

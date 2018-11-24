@@ -37,9 +37,21 @@ oldlace,olive,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturq
 peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,saddlebrown,salmon,sandybrown,seagreen,
 seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,
 turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
-    style1-color: black;
-    style2-color: radial-gradient(radius 180%,orange, derive(lightgray, -30%), derive(lightgray, 30%));
+
+/*#cb0000, #50312f, #deadb0 black*/
+    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+    style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
     style3-color: white;
+    style4-color: #50312f;
+    style5-color: #3f6c45;
+    style6-color: black;
+
+    /*    style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #ff2052);
+    style2-color: radial-gradient(radius 180%, #fb8928, derive(white, -30%), derive(white, 30%));
+    style3-color: white;
+    style4-color: #2a3240;
+    style5-color: #f6bd6a;
+    style6-color: black;*/
 	-fx-background-color: style1-color;
 	-fx-padding: 10 5 5 5;
 	-fx-spacing:5;
@@ -53,13 +65,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
    /*	-fx-pref-height:200;*/
 }
 
-.BeadRoadPane {
-	-fx-background-radius:0,0,0,0;
-	-fx-border-color:rgb(108,116,118);
-	-fx-border-width:0,0,0,0;
-	-fx-border-radius: 0,0,0,0;
 
-}
 
 .bottomHBox {
 	-fx-pref-width:1910;
@@ -80,7 +86,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-border-color:rgb(108,116,118);
 	-fx-border-width:0,0,0,0;
 	-fx-border-radius:0,0,0,0;
-	/*-fx-pref-height:233;*/
+	-fx-pref-height:233;
 	-fx-pref-width:628;
 }
 
@@ -440,7 +446,27 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .BigEyeRoadPane {
 	-fx-background-color:rgb(108,116,118,.5);
-	-fx-pref-width:629;
+	-fx-min-width:950;
+	-fx-min-height:150;
+}
+
+.BigEyeRoadDummyTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:3;
+	-fx-pref-columns:15;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:49;
+}
+
+.BigEyeRoadDummyLabel {
+	-fx-background-color:style3-color;
+	-fx-pref-width:49;
+	-fx-pref-height:49;
 }
 
 
@@ -450,17 +476,16 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:30;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:20;
-	-fx-pref-tile-height:20;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:24;
 }
 
 .BigEyeRoadLabel {
-	-fx-background-color:style3-color;
-	-fx-pref-width:20;
-	-fx-pref-height:20;
+	-fx-pref-width:24;
+	-fx-pref-height:24;
 }
 
 .BigEyeRoadLabel:red {
@@ -480,9 +505,28 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .SmallRoadPane {
 	-fx-background-color: rgb(108,116,118,.5);
-	/*-fx-pref-height:127;*/
-	-fx-pref-width:629;
+	-fx-min-width:950;
+	-fx-min-height:150;
 }
+.SmallRoadDummyTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:3;
+	-fx-pref-columns:15;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:49;
+}
+
+.SmallRoadDummyLabel {
+	-fx-background-color:style3-color;
+	-fx-pref-width:49;
+	-fx-pref-height:49;
+}
+
 
 .SmallRoadTilePane {
 	-fx-scale-x:1;
@@ -490,17 +534,16 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:30;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:20;
-	-fx-pref-tile-height:20;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:24;
 }
 
 .SmallRoadLabel {
-	-fx-background-color:style3-color;
-	-fx-pref-width:20;
-	-fx-pref-height:20;
+	-fx-pref-width:24;
+	-fx-pref-height:24;
 }
 
 
@@ -520,8 +563,27 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .CockroachRoadPane {
 	-fx-background-color: rgb(108,116,118,.5);
-/*	-fx-pref-height:127;*/
-	-fx-pref-width:629;
+	-fx-min-width:950;
+	-fx-min-height:150;
+}
+
+.CockroachRoadDummyTilePane {
+	-fx-scale-x:1;
+	-fx-scale-y:1;
+    -fx-alignment: top-left;
+    -fx-tile-alignment: top-left;
+	-fx-pref-rows:6;
+	-fx-pref-columns:19;
+	-fx-hgap:1;
+	-fx-vgap:1;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:53;
+}
+
+.CockroachRoadDummyLabel {
+	-fx-background-color:style3-color;
+	-fx-pref-width:49;
+	-fx-pref-height:53;
 }
 
 .CockroachRoadTilePane {
@@ -529,18 +591,17 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-scale-y:1;
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
-	-fx-pref-rows:6;
-	-fx-pref-columns:30;
+	-fx-pref-rows:12;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:20;
-	-fx-pref-tile-height:20;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:26;
 }
 
 .CockroachRoadLabel {
-	-fx-background-color:style3-color;
-	-fx-pref-width:20;
-	-fx-pref-height:20;
+	-fx-pref-width:24;
+	-fx-pref-height:26;
 }
 
 .CockroachRoadLabel:red {
@@ -558,261 +619,168 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 }
 
 
-.BeadHeader {
-    -fx-padding: 0 0 0 0;
-    -fx-background-color: style2-color;
-/*    -fx-border-radius: 5 5 5 5;
-    -fx-background-radius: 5 5 5 5*/;
-    -fx-text-fill: black;
-    -fx-pref-width:200;
-    -fx-pref-height:25;
-    -fx-alignment:center;
-    -fx-font-family: 'Bodonio';
-    -fx-font-size: 18;
-    }
 
-.BigEyeRoadHeader {
-    -fx-padding: 0 0 0 0;
-    -fx-background-color: style2-color;
-/*    -fx-border-radius: 5 5 5 5;
-    -fx-background-radius: 5 5 5 5;*/
-    -fx-text-fill: black;
-    -fx-pref-width:200;
-    -fx-pref-height:25;
-    -fx-alignment:center;
-    -fx-font-family: 'Bodonio';
-    -fx-font-size: 18;
-    }
+.betsLogo {
+	-fx-background-image: url("../images/logo-cm.png");
+	-fx-background-position:center;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: contain;
+	-fx-min-width:248;
+    -fx-min-height:82;
+}
+
+.betsRow {
+    -fx-background-color: goldenrod;
+    -fx-spacing: 1;
+}
+
+.betsHeader, .betsType, .betsRange {
+    -fx-alignment: center;
+    -fx-pref-height: 68;
+    -fx-background-color: style4-color;
+   	-fx-text-fill: goldenrod;
+   	-fx-font-family: 'Bauhaus';
+   	-fx-font-family: 'Book Antiqua Bold';
+   	-fx-font-size: 30;
+}
+
+.betsHeader, .betsType {
+    -fx-pref-width: 248;
+}
+
+.betsHeader, .betsRange {
+    -fx-pref-height: 82;
+}
+
+.betsRange {
+    -fx-pref-width: 200;
+    -fx-alignment:center-right;
+    -fx-padding: 0 10 0 0;
+}
+
+.betValue {
+    -fx-pref-height: 68;
+    -fx-background-color: style4-color;
+   	-fx-font-family: 'Bauhaus';
+   	-fx-font-family: 'Book Antiqua Bold';
+   	-fx-font-size: 30;
+    -fx-alignment: center-right;
+    -fx-pref-width: 200;
+   	-fx-text-fill: white;
+   	-fx-font-size: 40;
+   	-fx-padding: 0 10 0 0;
+}
 
 
 
-
-
-    .nameLabel {
-    	-fx-font-family: 'Bauhaus';
-    	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-    	-fx-font-size: 34;
-    }
-
-    .minLabel {
-    	-fx-text-fill: lightgray;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 22;
-        -fx-alignment:center-right;
-
-    }
-
-    .maxLabel {
-    	-fx-text-fill: lightgray;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 22;
-    	-fx-alignment:center-right;
-    }
-
-    .textField {
-        -fx-background-color: style2-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-    	-fx-text-fill: darkred;
-    	-fx-pref-width:250;
-        -fx-pref-height:25;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 32;
-
-    }
-
-    .textFieldRight {
-        -fx-background-color: style2-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-    	-fx-text-fill: darkred;
-    	-fx-pref-width:280;
-        -fx-pref-height:25;
-        -fx-alignment:center-right;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 32;
-
-    }
-
+#totalCount {
+    -fx-text-fill:black;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 25;
+}
 
 #bankerWinCount {
-    -fx-background-color:red;
-    -fx-text-fill:white;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 #playerWinCount {
-    -fx-background-color:dodgerblue;
-    -fx-text-fill:white;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 #tieWinCount {
-    -fx-background-color:limegreen;
-    -fx-text-fill:white;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 #bankerPairCount {
-    -fx-background-color:red;
-    -fx-text-fill:white;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 #playerPairCount {
-    -fx-background-color:dodgerblue;
-        -fx-text-fill:white;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 #naturalCount {
-    -fx-background-color:gold;
-    -fx-text-fill:white;
+    -fx-pref-width: 250;
+    -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
     -fx-font-size: 25;
 }
 
 
+#tLabel {
+    -fx-pref-width: 250;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
+}
 
 #bLabel {
+    -fx-pref-width: 250;
     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
 #pLabel {
+    -fx-pref-width: 250;
     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
 #tieLabel {
+    -fx-pref-width: 250;
     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
 #bpLabel {
+    -fx-pref-width: 250;
     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
 #ppLabel {
-     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-pref-width: 250;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
 #nLabel {
-     -fx-text-fill:black;
-    -fx-alignment:center-right;
+    -fx-pref-width: 250;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 18;
+    -fx-font-size: 21;
 }
 
-
-
-.InfoLabel1 {
-        -fx-background-color: style2-color;
-    	-fx-text-fill: black;
-    	-fx-pref-width:130;
-        -fx-pref-height:25;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 15;
+#gameLabel {
+    -fx-pref-width: 250;
+    -fx-text-fill:black;
+    -fx-alignment:center-left;
+    -fx-font-family: 'Book Antiqua Bold';
+    -fx-font-size: 21;
 }
 
-.InfoLabel2 {
-        -fx-background-color: style2-color;
-    	-fx-text-fill: black;
-    	-fx-pref-width:185;
-        -fx-pref-height:25;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 15;
-}
-
-.InfoLabel3 {
-        -fx-background-color: style2-color;
-    	-fx-text-fill: black;
-    	-fx-pref-width:153;
-        -fx-pref-height:25;
-        -fx-alignment:center;
-    	-fx-font-family: 'Bodonio';
-    	-fx-font-size: 15;
-}
-
-
-.LastWinLabel {
-    -fx-background-color: style3-color;
-    -fx-pref-height: 120;
-    -fx-pref-width: 120;
-}
-
-.LastWinLabel:bankerWin {
-    -fx-background-image: url("../images/banker.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat, stretch;
-}
-
-.LastWinLabel:tieWin {
-    -fx-background-image: url("../images/tie.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat, stretch;
-}
-
-.LastWinLabel:playerWin {
-    -fx-background-image: url("../images/player.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat, stretch;
-}
-
-
-
-
-.lastWinBox {
-        -fx-background-color: style3-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-}
-
-.counterBox {
-        -fx-background-color: style3-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-}
-
-.predictionBox {
-        -fx-background-color: style3-color;
-        -fx-border-radius: 5 5 5 5;
-        -fx-background-radius: 5 5 5 5;
-}
-
-.FootLabel {
-    -fx-padding: 0 0 0 0;
-    -fx-background-color: style2-color;
-    -fx-border-radius: 5 5 5 5;
-    -fx-background-radius: 5 5 5 5;
-    -fx-text-fill: black;
-    -fx-pref-width:1910;
-    -fx-pref-height:25;
-    -fx-alignment:center;
-    -fx-font-family: 'Bodonio';
-    -fx-font-size: 12;
-
-    }
 
 .menuBox {
         -fx-background-color: #43585c;
@@ -856,8 +824,160 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 }
 
 .RegionLogo {
-        -fx-background-image: url("../images/big-daddy-logo.png");
+        -fx-background-image: url("../images/logo.png");
         -fx-background-repeat: no-repeat;
         -fx-background-size: contain;
         -fx-background-position: center;
+}
+
+#RegionPredictionBanker {
+        -fx-background-image: url("../images/bead-road/a.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+}
+
+#RegionPredictionPlayer {
+        -fx-background-image: url("../images/bead-road/e.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-size: contain;
+        -fx-background-position: center;
+}
+
+
+.StackPane {
+    -fx-background-color:white;
+}
+
+.FootLabel {
+    -fx-padding: 0 0 0 0;
+    -fx-border-color: goldenrod;
+    -fx-border-width: 1;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    -fx-text-fill: white;
+    -fx-pref-width:1910;
+    -fx-pref-height:25;
+    -fx-alignment:center;
+    -fx-font-family: 'Bodonio';
+    -fx-font-size: 12;
+
+    }
+
+.gameHeader {
+	-fx-font-family: 'Bauhaus';
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 3 , 0 );
+	-fx-font-size: 50;
+	-fx-text-fill: style6-color;
+    -fx-padding: 0 20 0 20;
+}
+
+.tableName,.tableId {
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+	-fx-font-size: 40;
+	-fx-text-fill: style6-color;
+    -fx-padding: 0 0 0 0;
+}
+
+.tableName {
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+    -fx-padding: 0 5 0 20;
+}
+
+
+
+.LastWinResultLabel {
+	-fx-font-family: 'Book Antiqua Bold';
+	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
+	-fx-font-size: 40;
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+    -fx-pref-height: 300;
+    -fx-pref-width: 300;
+}
+
+.LastWinResultLabel:bankerWin {
+    -fx-background-image: url("../images/last-win/a.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:bankerWinBankerPair {
+    -fx-background-image: url("../images/last-win/b.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:bankerWinPlayerPair {
+    -fx-background-image: url("../images/last-win/c.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:bankerWinBothPair {
+    -fx-background-image: url("../images/last-win/d.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:playerWin {
+    -fx-background-image: url("../images/last-win/e.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:playerWinBankerPair {
+    -fx-background-image: url("../images/last-win/f.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:playerWinPlayerPair {
+    -fx-background-image: url("../images/last-win/g.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:playerWinBothPair {
+    -fx-background-image: url("../images/last-win/h.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:tieWin {
+    -fx-background-image: url("../images/last-win/i.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:tieWinBankerPair {
+    -fx-background-image: url("../images/last-win/j.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:tieWinPlayerPair {
+    -fx-background-image: url("../images/last-win/k.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
+}
+
+.LastWinResultLabel:tieWinBothPair {
+    -fx-background-image: url("../images/last-win/l.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    	-fx-background-size: 300 300;
 }

@@ -19,7 +19,7 @@ import scalafxml.core.macros.sfxml
 import sodium.syntax._
 
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
-class DisplayHandlerNepal
+class DisplayHandlerGoa
 (
   val gameBox: VBox,
   val lastWinResultLabel: LastWinResultLabel,
