@@ -98,7 +98,7 @@ class DisplayHandlerNepal
   superBetMax.textProperty().bindBidirectional(model.superSixBetMaxProperty)
   beadRoad.getBeadRoadListProperty.bind(model.beadRoadListProperty)
 
-  beadRoad.Initialize(8, 14)
+  beadRoad.Initialize(6, 11)
   bigRoad.Initialize(6, 49)
   bigEyeRoad.Initialize(6, 38)
   bigEyeRoadDummy.Initialize(3, 19)

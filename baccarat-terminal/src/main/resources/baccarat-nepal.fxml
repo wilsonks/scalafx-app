@@ -447,26 +447,26 @@
                                     <children>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                                 <Region fx:id="RegionPredictionBanker" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                                <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <BigEyeRoadLabel fx:id="p1" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                                 <BigEyeRoadLabel fx:id="b1" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <BigEyeRoadLabel fx:id="p1" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <SmallRoadLabel fx:id="p2" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                                 <SmallRoadLabel fx:id="b2" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <SmallRoadLabel fx:id="p2" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <CockroachRoadLabel fx:id="p3" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                                 <CockroachRoadLabel fx:id="b3" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <CockroachRoadLabel fx:id="p3" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                     </children>
