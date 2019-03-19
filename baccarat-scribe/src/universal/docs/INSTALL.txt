@@ -1,0 +1,36 @@
+System Requirements
+===================
+
+1. Install JRE 1.8 or higher
+
+Oracle JRE: https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+
+OR
+
+OpenJDK and OpenJFX (Linux)
+
+[bash]
+# run as superuser
+sudo -i
+
+# install JRE
+apt-get install openjdk-8-jre
+
+# install JFX
+apt-get install openjfx
+
+2. Install media codecs (Linux)
+
+[bash]
+# run as superuser
+sudo -i
+
+# install packages
+apt-get install libavcodec57 libavcodec-extra libavcodec-dev
+
+# create symlink for Java FX dependency
+ln -s /usr/lib/x86_64-linux-gnu/libavcodec.so /usr/lib/x86_64-linux-gnu/libavcodec.so.53
+
+3. Install HAVEGE (recommended)
+
+haveged daemon: https://issihosts.com/haveged/downloads.html
