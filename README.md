@@ -1,3 +1,1 @@
 # Baccarat Display
-
-# scalafx-app
