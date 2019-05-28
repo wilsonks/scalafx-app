@@ -59,22 +59,22 @@ class BaccaratModel {
   //Load Data From Database
   def loadData(): Data = {
     if (dataDB.exists) {
-      dataDB.readDeserialized[Data]
+      dataDB.readDeserialized[Data]()
     } else {
       dataDB.createIfNotExists(asDirectory = false, createParents = true)
       dataDB.writeSerialized(Data(Seq.empty[BeadRoadResult]))
-      dataDB.readDeserialized[Data]
+      dataDB.readDeserialized[Data]()
     }
   }
 
   def loadHeader(): Header = {
     //Load Data From Database
     if (headerDB.exists) {
-      headerDB.readDeserialized[Header]
+      headerDB.readDeserialized[Header]()
     } else {
       headerDB.createIfNotExists(asDirectory = false, createParents = true)
       headerDB.writeSerialized(pureconfig.loadConfigOrThrow[Header]("game.menu"))
-      headerDB.readDeserialized[Header]
+      headerDB.readDeserialized[Header]()
     }
   }
 

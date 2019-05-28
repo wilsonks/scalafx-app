@@ -6,17 +6,18 @@ lazy val `baccarat-display` = project.in(file("."))
 lazy val `baccarat-scribe` = project
   .settings(universalSettings)
   .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full))
-  .settings(libraryDependencies += "com.github.pathikrit" %% "better-files" % "3.6.0")
+  .settings(libraryDependencies += "com.github.pathikrit" %% "better-files" % "3.8.0")
+  .settings(libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.3")
+  .settings(libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.2.0")
   .settings(libraryDependencies += "com.github.pureconfig" %% "pureconfig" % "0.10.2")
   .settings(libraryDependencies += "org.reactfx" % "reactfx" % "2.0-M5")
   .settings(libraryDependencies += "org.scodec" %% "scodec-bits" % "1.1.5")
-  .settings(libraryDependencies += "com.tykhe.fx" %% "fx-io" % "5.0.0")
+  .settings(libraryDependencies += "com.tykhe.fx" %% "fx-io" % "4.0.2")
   .settings(libraryDependencies += "co.fs2" %% "fs2-core" % "0.10.4")
   .settings(libraryDependencies += "org.scalafx" %% "scalafxml-core-sfx8" % "0.4")
-  .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2")
   .settings(
     mainClass in assembly := Some("BaccaratApp"),
-    assemblyJarName in assembly := "baccaratDisplay.jar")
+    assemblyJarName in assembly := "baccaratLaptop.jar")
   .enablePlugins(JavaAppPackaging)
 
 lazy val universalSettings = Seq(
