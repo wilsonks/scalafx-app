@@ -14,10 +14,11 @@ lazy val `baccarat-scribe` = project
   .settings(libraryDependencies += "org.scodec" %% "scodec-bits" % "1.1.5")
   .settings(libraryDependencies += "com.tykhe.fx" %% "fx-io" % "4.0.2")
   .settings(libraryDependencies += "co.fs2" %% "fs2-core" % "0.10.4")
+  .settings(libraryDependencies += "co.fs2" %% "fs2-io" % "0.10.4")
   .settings(libraryDependencies += "org.scalafx" %% "scalafxml-core-sfx8" % "0.4")
   .settings(
     mainClass in assembly := Some("BaccaratApp"),
-    assemblyJarName in assembly := "baccaratLaptop.jar")
+    assemblyJarName in assembly := "baccaratElectronic.jar")
   .enablePlugins(JavaAppPackaging)
 
 lazy val universalSettings = Seq(

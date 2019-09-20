@@ -18,16 +18,11 @@
 
 
 .root {
-	-fx-pref-width:1366;
-	-fx-pref-height:768;
+	-fx-pref-width:1920;
+	-fx-pref-height:1080;
 }
 
 .game {
-
-	-fx-pref-width:1366;
-	-fx-pref-height:768;
-		-fx-padding:5 5 5 5;
-        -fx-spacing:5;
 /*transparent,aliceblue,antiquewhite,aqua,aquamarine,azure,beige,bisque,black,blanchedalmond,blue,blueviolet,
 brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,
 darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,
@@ -45,9 +40,10 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 /*#cb0000, #50312f, #deadb0 black*/
     style1-color: radial-gradient(center 50% 50%, radius 75%, #deadb0, #cb0000);
+ /*   style1-color: radial-gradient(center 50% 50%, radius 75%, white, yellow); */
     style2-color: radial-gradient(radius 180%, orangered, derive(white, -30%), derive(white, 30%));
     style3-color: white;
-    style4-color: #50312f;
+    style4-color: midnightblue;
     style5-color: #3f6c45;
     style6-color: black;
 
@@ -58,6 +54,11 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     style5-color: #f6bd6a;
     style6-color: black;*/
 	-fx-background-color: style1-color;
+	-fx-padding: 10 5 5 5;
+	-fx-spacing:5;
+	-fx-pref-width:1920;
+	-fx-pref-height:1080;
+
 }
 
 .header {
@@ -68,7 +69,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 
 .bottomHBox {
-	-fx-pref-width:1356;
+	-fx-pref-width:1910;
 	-fx-spacing:11;
 }
 
@@ -86,8 +87,8 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-border-color:rgb(108,116,118);
 	-fx-border-width:0,0,0,0;
 	-fx-border-radius:0,0,0,0;
-	-fx-pref-height:240;
-	-fx-pref-width:480;
+	-fx-pref-height:233;
+	-fx-pref-width:626;
 }
 
 
@@ -95,102 +96,103 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-padding:0,0,0,0;
 	-fx-tile-alignment: top-left;
 	-fx-pref-rows: 6;
-	-fx-pref-columns: 12;
-	-fx-pref-tile-width: 39;
-	-fx-pref-tile-height: 42;
-	-fx-hgap: 1;
-	-fx-vgap: 1;
+	-fx-pref-columns: 11;
+	-fx-pref-tile-width: 56;
+	-fx-pref-tile-height: 59;
+	-fx-hgap: .5;
+	-fx-vgap: .5;
 
 }
 
 .BeadRoadLabel {
     -fx-background-color:style3-color;
-    -fx-pref-width: 39;
-    -fx-pref-height: 42;
+/*    -fx-padding:1,1,1,1;*/
+    -fx-pref-height: 59;
+    -fx-pref-width: 56;
 }
 
 .BeadRoadLabel:bankerWin {
     -fx-background-image: url("../images/bead-road/a.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:bankerWinBankerPair {
     -fx-background-image: url("../images/bead-road/b.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:bankerWinPlayerPair {
     -fx-background-image: url("../images/bead-road/c.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:bankerWinBothPair {
     -fx-background-image: url("../images/bead-road/d.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:playerWin {
     -fx-background-image: url("../images/bead-road/e.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:playerWinBankerPair {
     -fx-background-image: url("../images/bead-road/f.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:playerWinPlayerPair {
     -fx-background-image: url("../images/bead-road/g.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:playerWinBothPair {
     -fx-background-image: url("../images/bead-road/h.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:tieWin {
     -fx-background-image: url("../images/bead-road/i.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:tieWinBankerPair {
     -fx-background-image: url("../images/bead-road/j.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:tieWinPlayerPair {
     -fx-background-image: url("../images/bead-road/k.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 .BeadRoadLabel:tieWinBothPair {
     -fx-background-image: url("../images/bead-road/l.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 39 39;
+    	-fx-background-size: 56 56;
 }
 
 
@@ -202,8 +204,8 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-border-color:rgb(108,116,118);
 	-fx-border-width:0,0,0,0;
 	-fx-border-radius:0,0,0,0;
-	-fx-pref-height:162;
-	-fx-pref-width:1350;
+	/*-fx-pref-height:233;*/
+	-fx-pref-width:1920;
 }
 
 
@@ -213,11 +215,11 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-alignment: top-left;
 	-fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:50;
-	-fx-pref-tile-width:26;
-	-fx-pref-tile-height:26;
-	-fx-hgap:1;
-	-fx-vgap:1;
+	-fx-pref-columns:49;
+	-fx-pref-tile-width:37.1;
+	-fx-pref-tile-height:37.1;
+	-fx-hgap:.5;
+	-fx-vgap:.5;
 }
 
 .BigRoadLabel {
@@ -226,133 +228,115 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-text-overrun:center-ellipsis;
 	-fx-text-fill:white;
 	-fx-font-weight:bold;
-	-fx-pref-width:26;
-	-fx-pref-height:26;
+	-fx-pref-width:37.1;
+	-fx-pref-height:37.1;
 }
 
 .BigRoadLabel:tieWin {
 	-fx-background-image: url("../images/big-road/21.png");
 	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWin {
 	-fx-background-image: url("../images/big-road/1.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBeforeTie {
 	-fx-background-image: url("../images/big-road/1.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinBankerPair {
 	-fx-background-image: url("../images/big-road/2.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBankerPairBeforeTie {
 	-fx-background-image: url("../images/big-road/2.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
--fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinPlayerPair {
 	-fx-background-image: url("../images/big-road/3.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinPlayerPairBeforeTie {
 	-fx-background-image: url("../images/big-road/3.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinBothPair {
 	-fx-background-image: url("../images/big-road/4.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBothPairBeforeTie {
 	-fx-background-image: url("../images/big-road/4.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWin {
 	-fx-background-image: url("../images/big-road/5.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBeforeTie {
 	-fx-background-image: url("../images/big-road/5.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinBankerPair {
 	-fx-background-image: url("../images/big-road/6.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBankerPairBeforeTie {
 	-fx-background-image: url("../images/big-road/6.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinPlayerPair {
 	-fx-background-image: url("../images/big-road/7.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinPlayerPairBeforeTie {
 	-fx-background-image: url("../images/big-road/7.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinBothPair {
 	-fx-background-image: url("../images/big-road/8.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBothPairBeforeTie {
 	-fx-background-image: url("../images/big-road/8.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 .BigRoadLabel:tieWinNatural {
 	-fx-background-image: url("../images/big-road/natural.png"),url("../images/big-road/21.png");
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 
@@ -361,113 +345,97 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 .BigRoadLabel:bankerWinNatural {
 	-fx-background-image: url("../images/big-road/13.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/13.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinBankerPairNatural {
 	-fx-background-image: url("../images/big-road/14.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBankerPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/14.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinPlayerPairNatural {
 	-fx-background-image: url("../images/big-road/15.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinPlayerPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/15.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:bankerWinBothPairNatural {
 	-fx-background-image: url("../images/big-road/16.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:bankerWinBothPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/16.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinNatural {
 	-fx-background-image: url("../images/big-road/17.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/17.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinBankerPairNatural {
 	-fx-background-image: url("../images/big-road/18.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBankerPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/18.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinPlayerPairNatural {
 	-fx-background-image: url("../images/big-road/19.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinPlayerPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/19.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 .BigRoadLabel:playerWinBothPairNatural {
 	-fx-background-image: url("../images/big-road/20.png");
 	-fx-background-position: center;
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat, stretch;
 }
 
 .BigRoadLabel:playerWinBothPairBeforeTieNatural {
 	-fx-background-image: url("../images/big-road/20.png"),url(../images/big-road/21.png);
-	-fx-background-position: center,8 10;
+	-fx-background-position: center,12 14;
 	-fx-background-repeat: no-repeat, no-repeat;
-	-fx-background-size: contain;
 }
 
 
@@ -479,8 +447,8 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .BigEyeRoadPane {
 	-fx-background-color:rgb(108,116,118,.5);
-	-fx-min-width:648;
-	-fx-min-height:107;
+	-fx-min-width:950;
+	-fx-min-height:150;
 }
 
 .BigEyeRoadDummyTilePane {
@@ -489,17 +457,17 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:3;
-	-fx-pref-columns:18;
+	-fx-pref-columns:15;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:35;
-	-fx-pref-tile-height:35;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:49;
 }
 
 .BigEyeRoadDummyLabel {
 	-fx-background-color:style3-color;
-	-fx-pref-width:35;
-	-fx-pref-height:35;
+	-fx-pref-width:49;
+	-fx-pref-height:49;
 }
 
 
@@ -509,16 +477,16 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:36;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:17;
-	-fx-pref-tile-height:17;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:24;
 }
 
 .BigEyeRoadLabel {
-	-fx-pref-width:17;
-	-fx-pref-height:17;
+	-fx-pref-width:24;
+	-fx-pref-height:24;
 }
 
 .BigEyeRoadLabel:red {
@@ -538,8 +506,8 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .SmallRoadPane {
 	-fx-background-color: rgb(108,116,118,.5);
-	-fx-min-width:648;
-	-fx-min-height:107;
+	-fx-min-width:950;
+	-fx-min-height:150;
 }
 .SmallRoadDummyTilePane {
 	-fx-scale-x:1;
@@ -547,17 +515,17 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:3;
-	-fx-pref-columns:18;
+	-fx-pref-columns:15;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:35;
-	-fx-pref-tile-height:35;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:49;
 }
 
 .SmallRoadDummyLabel {
 	-fx-background-color:style3-color;
-	-fx-pref-width:35;
-	-fx-pref-height:35;
+	-fx-pref-width:49;
+	-fx-pref-height:49;
 }
 
 
@@ -567,16 +535,16 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-alignment: top-left;
     -fx-tile-alignment: top-left;
 	-fx-pref-rows:6;
-	-fx-pref-columns:36;
+	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:17;
-	-fx-pref-tile-height:17;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:24;
 }
 
 .SmallRoadLabel {
-	-fx-pref-width:17;
-	-fx-pref-height:17;
+	-fx-pref-width:24;
+	-fx-pref-height:24;
 }
 
 
@@ -596,10 +564,9 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .CockroachRoadPane {
 	-fx-background-color: rgb(108,116,118,.5);
-	-fx-min-width:684;
-	-fx-min-height:228;
+	-fx-min-width:950;
+	-fx-min-height:150;
 }
-
 
 .CockroachRoadDummyTilePane {
 	-fx-scale-x:1;
@@ -610,14 +577,14 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-pref-columns:19;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:35;
-	-fx-pref-tile-height:37;
+	-fx-pref-tile-width:49;
+	-fx-pref-tile-height:53;
 }
 
 .CockroachRoadDummyLabel {
 	-fx-background-color:style3-color;
-	-fx-pref-width:35;
-	-fx-pref-height:37;
+	-fx-pref-width:49;
+	-fx-pref-height:53;
 }
 
 .CockroachRoadTilePane {
@@ -629,13 +596,13 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-pref-columns:38;
 	-fx-hgap:1;
 	-fx-vgap:1;
-	-fx-pref-tile-width:17;
-	-fx-pref-tile-height:18;
+	-fx-pref-tile-width:24;
+	-fx-pref-tile-height:26;
 }
 
 .CockroachRoadLabel {
-	-fx-pref-width:17;
-	-fx-pref-height:18;
+	-fx-pref-width:24;
+	-fx-pref-height:26;
 }
 
 .CockroachRoadLabel:red {
@@ -655,12 +622,12 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 
 .betsLogo {
-	-fx-background-image: url("../images/logo-cm.png");
+	-fx-background-image: url("../images/empty.png");
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
 	-fx-background-size: contain;
-	-fx-min-width:176;
-    -fx-min-height:58;
+	-fx-min-width:248;
+    -fx-min-height:82;
 }
 
 .betsRow {
@@ -670,38 +637,38 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 .betsHeader, .betsType, .betsRange {
     -fx-alignment: center;
-    -fx-pref-height: 48;
+    -fx-pref-height: 68;
     -fx-background-color: style4-color;
    	-fx-text-fill: goldenrod;
    	-fx-font-family: 'Bauhaus';
    	-fx-font-family: 'Book Antiqua Bold';
-   	-fx-font-size: 21;
+   	-fx-font-size: 30;
 }
 
 .betsHeader, .betsType {
-    -fx-pref-width: 176;
+    -fx-pref-width: 248;
 }
 
 .betsHeader, .betsRange {
-    -fx-pref-height: 58;
+    -fx-pref-height: 82;
 }
 
 .betsRange {
-    -fx-pref-width: 143;
+    -fx-pref-width: 200;
     -fx-alignment:center-right;
-    -fx-padding: 0 0 0 0;
+    -fx-padding: 0 10 0 0;
 }
 
 .betValue {
+    -fx-pref-height: 68;
     -fx-background-color: style4-color;
    	-fx-font-family: 'Bauhaus';
    	-fx-font-family: 'Book Antiqua Bold';
-   	-fx-font-size: 21;
+   	-fx-font-size: 30;
     -fx-alignment: center-right;
-    -fx-pref-width: 143;
-    -fx-pref-height: 48;
+    -fx-pref-width: 200;
    	-fx-text-fill: white;
-   	-fx-font-size: 21;
+   	-fx-font-size: 40;
    	-fx-padding: 0 10 0 0;
 }
 
@@ -710,109 +677,109 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 #totalCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #bankerWinCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #playerWinCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #tieWinCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #bankerPairCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #playerPairCount {
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 #naturalCount {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 17;
+    -fx-font-size: 25;
 }
 
 
 #tLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #bLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #pLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #tieLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #bpLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: "Book Antiqua Bold";
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #ppLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #nLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 #gameLabel {
-    -fx-pref-width: 178;
+    -fx-pref-width: 250;
     -fx-text-fill:black;
     -fx-alignment:center-left;
     -fx-font-family: 'Book Antiqua Bold';
-    -fx-font-size: 15;
+    -fx-font-size: 21;
 }
 
 
@@ -821,40 +788,40 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
         -fx-background-color: #00293c;
         -fx-border-radius: 5 5 5 5;
             	-fx-text-fill: white;
-            	-fx-pref-width:221;
-                -fx-pref-height:253;
+            	-fx-pref-width:310;
+                -fx-pref-height:354;
 }
 
 .menuTitle {
         -fx-background-color: #4cb5f5;
     	-fx-text-fill: white;
-    	-fx-pref-width:228;
-        -fx-pref-height:30;
+    	-fx-pref-width:320;
+        -fx-pref-height:42;
         -fx-alignment:center;
     	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 17;
+    	-fx-font-size: 25;
 }
 
 .menuLabels {
         -fx-background-color: #aac1c6;
         -fx-background-color: #f1f3ce;
     	-fx-text-fill: black;
-    	-fx-pref-width:143;
-        -fx-pref-height:30;
+    	-fx-pref-width:200;
+        -fx-pref-height:42;
         -fx-alignment:top-left;
     	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 15;
+    	-fx-font-size: 20;
 }
 
 .menuLabels:focused {
         -fx-background-color: #34675c;
         -fx-background-color: #f62a00;
     	-fx-text-fill: black;
-    	-fx-pref-width:143;
-        -fx-pref-height:30;
+    	-fx-pref-width:200;
+        -fx-pref-height:42;
         -fx-alignment:top-left;
     	-fx-font-family: 'Bauhaus';
-    	-fx-font-size: 15;
+    	-fx-font-size: 20;
 }
 
 .RegionLogo {
@@ -890,8 +857,8 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
     -fx-border-radius: 5 5 5 5;
     -fx-background-radius: 5 5 5 5;
     -fx-text-fill: white;
-    -fx-pref-width:1359;
-    -fx-pref-height:18;
+    -fx-pref-width:1910;
+    -fx-pref-height:25;
     -fx-alignment:center;
     -fx-font-family: 'Bodonio';
     -fx-font-size: 12;
@@ -902,7 +869,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 	-fx-font-family: 'Bauhaus';
 	-fx-font-family: 'Book Antiqua Bold';
 	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 3 , 0 );
-	-fx-font-size: 35;
+	-fx-font-size: 50;
 	-fx-text-fill: style6-color;
     -fx-padding: 0 20 0 20;
 }
@@ -910,7 +877,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 .tableName,.tableId {
 	-fx-font-family: 'Book Antiqua Bold';
 	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-	-fx-font-size: 30;
+	-fx-font-size: 40;
 	-fx-text-fill: style6-color;
     -fx-padding: 0 0 0 0;
 }
@@ -925,93 +892,93 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 .LastWinResultLabel {
 	-fx-font-family: 'Book Antiqua Bold';
 	-fx-effect: dropshadow( one-pass-box , gold , 4 , 0.0 , 1 , 0 );
-	-fx-font-size: 35;
+	-fx-font-size: 40;
 	-fx-text-fill: white;
 	-fx-text-alignment: center;
-    -fx-pref-height: 213;
-    -fx-pref-width: 213;
+    -fx-pref-height: 300;
+    -fx-pref-width: 300;
 }
 
 .LastWinResultLabel:bankerWin {
     -fx-background-image: url("../images/last-win/a.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:bankerWinBankerPair {
     -fx-background-image: url("../images/last-win/b.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:bankerWinPlayerPair {
     -fx-background-image: url("../images/last-win/c.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:bankerWinBothPair {
     -fx-background-image: url("../images/last-win/d.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:playerWin {
     -fx-background-image: url("../images/last-win/e.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:playerWinBankerPair {
     -fx-background-image: url("../images/last-win/f.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:playerWinPlayerPair {
     -fx-background-image: url("../images/last-win/g.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:playerWinBothPair {
     -fx-background-image: url("../images/last-win/h.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:tieWin {
     -fx-background-image: url("../images/last-win/i.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:tieWinBankerPair {
     -fx-background-image: url("../images/last-win/j.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:tieWinPlayerPair {
     -fx-background-image: url("../images/last-win/k.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }
 
 .LastWinResultLabel:tieWinBothPair {
     -fx-background-image: url("../images/last-win/l.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-    	-fx-background-size: 213 213;
+    	-fx-background-size: 300 300;
 }

@@ -27,15 +27,15 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="768.0" maxWidth="1366.0" styleClass="root" stylesheets="@styles/main-goa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplayHandlerGoa">
+<StackPane styleClass="root" stylesheets="@styles/main-nepal-cmg.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplayHandlerNepal">
     <children>
-        <Pane fx:id="promoPane" maxHeight="768.0" maxWidth="1366.0" StackPane.alignment="CENTER">
+        <Pane fx:id="promoPane" StackPane.alignment="CENTER">
             <children>
-                <MediaView fx:id="promoMediaView" fitHeight="768.0" fitWidth="1366.0" preserveRatio="false">
+                <MediaView fx:id="promoMediaView" fitHeight="1080.0" fitWidth="1920.0" preserveRatio="false">
                 </MediaView>
             </children>
         </Pane>
-        <BorderPane fx:id="info" maxHeight="768.0" maxWidth="1366.0">
+        <BorderPane fx:id="info" prefHeight="200.0" prefWidth="200.0">
             <right>
                 <ImageView fitHeight="444.0" fitWidth="388.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
                     <image>
@@ -44,10 +44,10 @@
                 </ImageView>
             </right>
             <StackPane.margin>
-                <Insets />
+                <Insets bottom="40.0" right="10.0" />
             </StackPane.margin>
         </BorderPane>
-        <BorderPane fx:id="menu" maxWidth="1366.0">
+        <BorderPane fx:id="menu">
             <center>
                 <VBox maxHeight="370.0" maxWidth="330.0" prefWidth="385.0" spacing="5.0" styleClass="menuBox" BorderPane.alignment="CENTER">
                     <children>
@@ -149,18 +149,18 @@
                 </VBox>
             </center>
         </BorderPane>
-        <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" maxWidth="1366.0" styleClass="game">
+        <VBox fx:id="gameBox" alignment="BOTTOM_CENTER" styleClass="game">
             <children>
-                <HBox alignment="CENTER_LEFT" maxHeight="53.0" maxWidth="1366.0" prefHeight="71.0" prefWidth="143.0">
+                <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Label fx:id="nameLabel" styleClass="tableName" text="%nameLabel" />
-                  <Label fx:id="tableId" layoutX="422.0" layoutY="13.0" minWidth="430.0" styleClass="tableId" text="001" />
+                  <Label fx:id="tableId" layoutX="822.0" layoutY="13.0" minWidth="600.0" styleClass="tableId" text="001" />
                   <Label layoutX="10.0" layoutY="13.0" styleClass="gameHeader" text="%gameName" />
                     </children>
                 </HBox>
-                <Pane maxWidth="1366.0" prefHeight="167.0" prefWidth="1359.0" styleClass="BigRoadPane">
+                <Pane maxWidth="1910.0" prefHeight="235.0" prefWidth="1910.0" styleClass="BigRoadPane">
                     <children>
-                        <BigRoadTilePane fx:id="bigRoad" prefWidth="1362.0" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">
+                        <BigRoadTilePane fx:id="bigRoad" style="-fx-background-radius: 2;" styleClass="BigRoadTilePane">
                         </BigRoadTilePane>
                     </children>
                     <opaqueInsets>
@@ -170,13 +170,13 @@
                         <Insets bottom="8.0" right="5.0" />
                     </VBox.margin>
                 </Pane>
-                <HBox alignment="CENTER_LEFT" maxWidth="1366.0" spacing="19.0">
+                <HBox alignment="CENTER" maxWidth="1910.0" spacing="10.0">
                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="13.0">
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="24.0">
                             <children>
-                                <Pane styleClass="BigEyeRoadPane">
+                                <Pane prefHeight="186.0" prefWidth="950.0" styleClass="BigEyeRoadPane">
                                     <children>
-                                        <StackPane prefHeight="107.0" prefWidth="676.0">
+                                        <StackPane prefHeight="150.0" prefWidth="950.0">
                                             <children>
                                                 <BigEyeRoadDummyTilePane fx:id="bigEyeRoadDummy" styleClass="BigEyeRoadDummyTilePane" />
                                                 <BigEyeRoadTilePane fx:id="bigEyeRoad" layoutX="10.0" layoutY="10.0" styleClass="BigEyeRoadTilePane" />
@@ -186,7 +186,7 @@
                                 </Pane>
                                 <Pane styleClass="SmallRoadPane">
                                     <children>
-                                        <StackPane prefHeight="107.0" prefWidth="676.0">
+                                        <StackPane prefHeight="150.0" prefWidth="950.0">
                                             <children>
                                                 <SmallRoadDummyTilePane fx:id="smallRoadDummy" layoutX="10.0" layoutY="10.0" styleClass="SmallRoadDummyTilePane" />
                                                 <SmallRoadTilePane fx:id="smallRoad" layoutX="10.0" layoutY="10.0" styleClass="SmallRoadTilePane" />
@@ -196,44 +196,40 @@
                                 </Pane>
                             </children>
                             <HBox.margin>
-                                <Insets />
+                                <Insets bottom="10.0" top="10.0" />
                             </HBox.margin>
                         </VBox>
                         <Pane styleClass="CockroachRoadPane">
                             <children>
-                                <StackPane prefHeight="228.0" prefWidth="684.0">
+                                <StackPane prefHeight="324.0" prefWidth="950.0">
                                     <children>
                                         <CockroachRoadDummyTilePane fx:id="cockroachRoadDummy" styleClass="CockroachRoadDummyTilePane" />
-                                        <CockroachRoadTilePane fx:id="cockroachRoad" styleClass="CockroachRoadTilePane" />
+                                        <CockroachRoadTilePane fx:id="cockroachRoad" layoutX="10.0" layoutY="10.0" styleClass="CockroachRoadTilePane" />
                                     </children>
                                 </StackPane>
                             </children>
                             <HBox.margin>
-                                <Insets />
+                                <Insets bottom="10.0" top="10.0" />
                             </HBox.margin>
                         </Pane>
                     </children>
                     <VBox.margin>
-                        <Insets />
+                        <Insets right="5.0" />
                     </VBox.margin>
                 </HBox>
-                <VBox alignment="TOP_CENTER" maxHeight="265.0" maxWidth="-Infinity" prefHeight="265.0" prefWidth="1366.0" spacing="5.0">
+                <VBox alignment="TOP_CENTER" prefHeight="371.0" prefWidth="1910.0" spacing="5.0">
                     <children>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="257.0" prefWidth="1359.0" spacing="10.0" styleClass="top" VBox.vgrow="ALWAYS">
+                        <HBox prefHeight="360.0" prefWidth="1909.0" spacing="10.0" styleClass="top" VBox.vgrow="ALWAYS">
                             <children>
-                                <Pane prefHeight="245.0" prefWidth="449.0" styleClass="BeadRoadPane">
+                                <Pane maxHeight="359.0" prefHeight="343.0" prefWidth="629.0" styleClass="BeadRoadPane">
                                     <children>
-                                        <BeadRoadTilePane fx:id="beadRoad" prefWidth="480.0" styleClass="BeadRoadTilePane">
+                                        <BeadRoadTilePane fx:id="beadRoad" styleClass="BeadRoadTilePane">
                                         </BeadRoadTilePane>
                                     </children>
                                 </Pane>
-                                <VBox alignment="TOP_CENTER" prefWidth="420.0" styleClass="betsRow" HBox.hgrow="ALWAYS">
-                                    <HBox alignment="TOP_RIGHT" styleClass="betsRow">
-                                        <ImageView fitHeight="58.0" fitWidth="162.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@images/logo-cp.png" />
-                                 </image>
-                              </ImageView>
+                                <VBox alignment="TOP_CENTER" styleClass="betsRow" HBox.hgrow="ALWAYS">
+                                    <HBox styleClass="betsRow">
+                                        <Label styleClass="betsHeader,betsLogo" />
                                         <Label fx:id="minLabel" styleClass="betsRange" text="%minLabel" />
                                         <Label fx:id="maxLabel" styleClass="betsRange" text="%maxLabel" />
                                     </HBox>
@@ -258,15 +254,15 @@
                                         <Label fx:id="superBetMax" styleClass="betValue" text="500" />
                                     </HBox>
                                 </VBox>
-                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="143.0" prefWidth="321.0">
+                                <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="450.0">
                                     <children>
-                                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="143.0" prefWidth="400.0">
+                                        <StackPane prefHeight="359.0" prefWidth="400.0">
                                             <children>
-                                                <VBox maxHeight="-Infinity" minHeight="257.0" prefHeight="200.0" prefWidth="100.0" spacing="1.0">
+                                                <VBox prefHeight="200.0" prefWidth="100.0" spacing="1.0">
                                                     <children>
-                                                        <HBox maxHeight="-Infinity" minWidth="36.0" prefHeight="35.0" prefWidth="200.0">
+                                                        <HBox prefHeight="50.0" prefWidth="200.0">
                                                             <children>
-                                                                <Label maxHeight="36.0" maxWidth="110.0" minWidth="36.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" />
+                                                                <Label maxWidth="110.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" />
                                                                 <Label fx:id="gameLabel" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" text="%gameLabel">
                                                                     <font>
                                                                         <Font name="Arctik 2.5" size="22.0" />
@@ -285,9 +281,9 @@
                                                                 <Insets bottom="1.0" />
                                                             </VBox.margin>
                                                         </HBox>
-                                                        <HBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -312,7 +308,7 @@
                                                         </HBox>
                                                         <HBox layoutX="10.0" layoutY="61.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -337,7 +333,7 @@
                                                         </HBox>
                                                         <HBox layoutX="10.0" layoutY="112.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -365,7 +361,7 @@
                                                         </HBox>
                                                         <HBox layoutX="10.0" layoutY="61.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -390,7 +386,7 @@
                                                         </HBox>
                                                         <HBox layoutX="10.0" layoutY="112.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -418,7 +414,7 @@
                                                         </HBox>
                                                         <HBox layoutX="10.0" layoutY="265.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: white;">
                                                             <children>
-                                                                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                                     <HBox.margin>
                                                                         <Insets left="20.0" right="20.0" />
                                                                     </HBox.margin>
@@ -447,30 +443,30 @@
                                         </StackPane>
                                     </children>
                                 </VBox>
-                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="143.0" prefWidth="107.0" spacing="1.0">
+                                <VBox maxHeight="359.0" prefHeight="200.0" prefWidth="150.0" spacing="1.0">
                                     <children>
-                                        <HBox maxHeight="-Infinity" minHeight="70.0" minWidth="64.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
+                                        <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                                 <Region fx:id="RegionPredictionBanker" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                                <Region fx:id="RegionPredictionPlayer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <BigEyeRoadLabel fx:id="p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
-                                                <BigEyeRoadLabel fx:id="b1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
+                                                <BigEyeRoadLabel fx:id="b1" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <BigEyeRoadLabel fx:id="p1" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <SmallRoadLabel fx:id="p2" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
-                                                <SmallRoadLabel fx:id="b2" layoutX="10.0" layoutY="10.0" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
+                                                <SmallRoadLabel fx:id="b2" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <SmallRoadLabel fx:id="p2" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                         <HBox maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="1.0">
                                             <children>
-                                                <CockroachRoadLabel fx:id="p3" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
-                                                <CockroachRoadLabel fx:id="b3" layoutX="10.0" layoutY="10.0" minHeight="62.0" minWidth="53.0" style="-fx-background-color: white;" />
+                                                <CockroachRoadLabel fx:id="b3" layoutX="10.0" layoutY="10.0" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
+                                                <CockroachRoadLabel fx:id="p3" minHeight="90.0" minWidth="75.0" style="-fx-background-color: white;" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -485,7 +481,7 @@
                         <Insets left="1.0" right="5.0" />
                     </VBox.margin>
                 </VBox>
-                <VBox alignment="BOTTOM_CENTER" maxWidth="1366.0" minHeight="21.0" prefHeight="21.0" prefWidth="1366.0">
+                <VBox alignment="BOTTOM_CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="1910.0">
                     <Label fx:id="footing" prefHeight="35.0" styleClass="FootLabel" text="Powered By Tykhe Gaming Pvt. Ltd.">
                         <padding>
                             <Insets bottom="5.0" />
@@ -497,13 +493,12 @@
                 </VBox>
             </children>
             <StackPane.margin>
-                <Insets />
+                <Insets left="5.0" />
             </StackPane.margin>
         </VBox>
-        <BorderPane fx:id="dynamicResult">
+      <BorderPane fx:id="dynamicResult" prefHeight="200.0" prefWidth="200.0">
          <center>
             <LastWinResultLabel fx:id="lastWinResultLabel" result="PLAYER_WIN" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
+         </center></BorderPane>
     </children>
 </StackPane>

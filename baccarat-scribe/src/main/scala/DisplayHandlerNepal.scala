@@ -1,10 +1,10 @@
-
 import java.io.{File => JFile}
 import java.util.ResourceBundle
 
 import customjavafx.scene.control._
 import customjavafx.scene.layout._
 import fs2.io.fx.{Data, Header}
+import fx.io.FxReader
 import javafx.beans.value.{ChangeListener, ObservableValue}
 import javafx.collections.ObservableList
 import javafx.scene.control.{Button, Label, TextField}
@@ -19,8 +19,7 @@ import scalafxml.core.macros.sfxml
 import sodium.syntax._
 
 @sfxml(additionalControls = List("customjavafx.scene.control", "customjavafx.scene.layout"))
-class DisplayHandlerNepal
-(
+class DisplayHandlerNepal(
   val gameBox: VBox,
   val lastWinResultLabel: LastWinResultLabel,
   val tableId: Label,
@@ -77,7 +76,7 @@ class DisplayHandlerNepal
   val cockroachRoadDummy: CockroachRoadDummyTilePane,
   val bigRoad: BigRoadTilePane,
   val dynamicResult: BorderPane
-)(implicit display: fx.io.Display, res: Option[ResourceBundle]) {
+)(implicit display: fx.io.Display, res: Option[ResourceBundle], reader: FxReader[BeadRoadResult]) {
 
   //Instantiate model
   val model = new BaccaratModel()
@@ -127,9 +126,27 @@ class DisplayHandlerNepal
   superBetMin.setText(header.superBetMin)
   superBetMax.setText(header.superBetMax)
 
+  val tList = Array(
+    tTableId,
+    tHandBetMin,
+    tHandBetMax,
+    tTieBetMin,
+    tTieBetMax,
+    tPairBetMin,
+    tPairBetMax,
+    tSuperSixBetMin,
+    tSuperSixBetMax)
 
-  val tList = Array(tTableId, tHandBetMin, tHandBetMax, tTieBetMin, tTieBetMax, tPairBetMin, tPairBetMax, tSuperSixBetMin, tSuperSixBetMax)
-  val lList = Array(lTableId, lHandBetMin, lHandBetMax, lTieBetMin, lTieBetMax, lPairBetMin, lPairBetMax, lSuperSixBetMin, lSuperSixBetMax)
+  val lList = Array(
+    lTableId,
+    lHandBetMin,
+    lHandBetMax,
+    lTieBetMin,
+    lTieBetMax,
+    lPairBetMin,
+    lPairBetMax,
+    lSuperSixBetMin,
+    lSuperSixBetMax)
   val lastWinPause: PauseTransition = new PauseTransition(Duration(3000))
   var media: Media = null
   var mediaPlayer: MediaPlayer = null
@@ -137,7 +154,6 @@ class DisplayHandlerNepal
   var infoOn = false
   var editOn = false
   var mIndex: Int = 0
-
 
   var promoOn = false
   if (java.awt.Toolkit.getDefaultToolkit.getLockingKeyState(java.awt.event.KeyEvent.VK_NUM_LOCK)) {
@@ -164,8 +180,7 @@ class DisplayHandlerNepal
       mediaPlayer.setCycleCount(-1)
       promoMediaView.setMediaPlayer(mediaPlayer)
       mediaPlayer.play()
-    }
-    else {
+    } else {
       println("Error: Promo Videos Not Found in!")
     }
   }
@@ -174,6 +189,14 @@ class DisplayHandlerNepal
     if (model.getPromoMedia != null) mediaPlayer.dispose()
 
   }
+
+  // callback registration
+  sodium.Stream.shift(reader.valueProperty().updates).foreach { result =>
+    beadRoad.AddElement(result)
+    model.saveData()
+  }
+  // start service after callback registration to ensure no updates are missed
+  reader.start()
 
   beadRoad.getCountProperty
     .addListener(new ChangeListener[Number] {
@@ -266,9 +289,9 @@ class DisplayHandlerNepal
   bigRoad.bigEyeRoadListProperty
     .addListener(new ChangeListener[ObservableList[BigEyeRoadLabel]] {
       override def changed(
-                            observableValue: ObservableValue[_ <: ObservableList[BigEyeRoadLabel]],
-                            t: ObservableList[BigEyeRoadLabel],
-                            t1: ObservableList[BigEyeRoadLabel]): Unit = {
+        observableValue: ObservableValue[_ <: ObservableList[BigEyeRoadLabel]],
+        t: ObservableList[BigEyeRoadLabel],
+        t1: ObservableList[BigEyeRoadLabel]): Unit = {
         if (!t1.isEmpty) bigEyeRoad.ReArrangeElements(t1)
         else {
           bigEyeRoad.Reset()
@@ -279,9 +302,9 @@ class DisplayHandlerNepal
   bigRoad.smallRoadListProperty
     .addListener(new ChangeListener[ObservableList[SmallRoadLabel]] {
       override def changed(
-                            observableValue: ObservableValue[_ <: ObservableList[SmallRoadLabel]],
-                            t: ObservableList[SmallRoadLabel],
-                            t1: ObservableList[SmallRoadLabel]): Unit = {
+        observableValue: ObservableValue[_ <: ObservableList[SmallRoadLabel]],
+        t: ObservableList[SmallRoadLabel],
+        t1: ObservableList[SmallRoadLabel]): Unit = {
         if (!t1.isEmpty) smallRoad.ReArrangeElements(t1)
         else {
           smallRoad.Reset()
@@ -292,16 +315,15 @@ class DisplayHandlerNepal
   bigRoad.cockroachRoadListProperty
     .addListener(new ChangeListener[ObservableList[CockroachRoadLabel]] {
       override def changed(
-                            observableValue: ObservableValue[_ <: ObservableList[CockroachRoadLabel]],
-                            t: ObservableList[CockroachRoadLabel],
-                            t1: ObservableList[CockroachRoadLabel]): Unit = {
+        observableValue: ObservableValue[_ <: ObservableList[CockroachRoadLabel]],
+        t: ObservableList[CockroachRoadLabel],
+        t1: ObservableList[CockroachRoadLabel]): Unit = {
         if (!t1.isEmpty) cockroachRoad.ReArrangeElements(t1)
         else {
           cockroachRoad.Reset()
         }
       }
     })
-
 
   def focusSame(): Unit = {
     lList(mIndex).requestFocus()
@@ -316,42 +338,48 @@ class DisplayHandlerNepal
   }
 
 
+
   (display.root
     .handle(KeyEvent.KEY_RELEASED)
     .map(_.getCode)
     .filter(key => model.keysMap.contains(key))
     .transform(Option.empty[String]) {
-      case (KeyCode.ENTER, _) if promoOn => stopPromo(); model.nextPromoMedia(); playPromo(); (None, None)
-      case (KeyCode.ENTER, _) if menuOn && editOn => lList(mIndex).requestFocus(); editOn = !editOn; (None, None)
-      case (KeyCode.ENTER, _) if menuOn => tList(mIndex).requestFocus(); editOn = !editOn; (None, None)
-      case (KeyCode.ENTER, result) => gameBox.requestFocus(); (result, None)
+      case (KeyCode.ENTER, _) if promoOn             => stopPromo(); model.nextPromoMedia(); playPromo(); (None, None)
+      case (KeyCode.ENTER, _) if menuOn && editOn    => lList(mIndex).requestFocus(); editOn = !editOn; (None, None)
+      case (KeyCode.ENTER, _) if menuOn              => tList(mIndex).requestFocus(); editOn = !editOn; (None, None)
+      case (KeyCode.ENTER, result)                   => gameBox.requestFocus(); (result, None)
       case (KeyCode.NUMPAD2, _) if menuOn && !editOn => focusNext(); (None, None)
       case (KeyCode.NUMPAD8, _) if menuOn && !editOn => focusBack(); (None, None)
-      case (KeyCode.NUM_LOCK, _) if menuOn => menu.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
+      case (KeyCode.NUM_LOCK, _) if menuOn =>
+        menu.toBack(); gameBox.requestFocus(); model.saveHeader(); menuOn = false; (None, None)
       case (KeyCode.NUM_LOCK, _) => menu.toFront(); focusSame(); menuOn = true; (None, None)
-      case (KeyCode.DIVIDE, _) if promoOn => stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
-      case (KeyCode.DIVIDE, _) => promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
-      case (KeyCode.MULTIPLY, _) if infoOn => info.toBack(); gameBox.requestFocus(); infoOn = false; (None, None)
-      case (KeyCode.MULTIPLY, _) => info.toFront(); info.requestFocus(); infoOn = true; (None, None)
-      case (key, result) if result.isEmpty => (None, Some(model.keysMap(key)))
+      case (KeyCode.DIVIDE, _) if promoOn =>
+        stopPromo(); promoPane.toBack(); gameBox.requestFocus(); promoOn = false; (None, None)
+      case (KeyCode.DIVIDE, _) =>
+        promoPane.toFront(); playPromo(); promoPane.requestFocus(); promoOn = true; (None, None)
+      case (KeyCode.MULTIPLY, _) if infoOn                   => info.toBack(); gameBox.requestFocus(); infoOn = false; (None, None)
+      case (KeyCode.MULTIPLY, _)                             => info.toFront(); info.requestFocus(); infoOn = true; (None, None)
+      case (key, result) if result.isEmpty                   => (None, Some(model.keysMap(key)))
       case (key, result) if result.get eq model.keysMap(key) => (None, None)
-      case (key, result) if result.get.contains(model.keysMap(key)) => (None, Some(result.get.replaceAll(model.keysMap(key), "")))
+      case (key, result) if result.get.contains(model.keysMap(key)) =>
+        (None, Some(result.get.replaceAll(model.keysMap(key), "")))
       case (key, result) => (None, Some((result.get + model.keysMap(key)).toCharArray.sorted.mkString))
     } unNone)
     .map(model.coupsMap.get)
     .filter(result => result.isDefined)
     .map(result => result.get)
-    .foreach { result => {
-      result match {
-        case BeadRoadResult.EXIT => display.exit()
-        case BeadRoadResult.UNDO => beadRoad.RemoveElement()
-        case BeadRoadResult.CLEAR => beadRoad.Reset()
-        case _ => {
-          beadRoad.AddElement(result)
+    .foreach { result =>
+      {
+        result match {
+          case BeadRoadResult.EXIT  => display.exit()
+          case BeadRoadResult.UNDO  => beadRoad.RemoveElement()
+          case BeadRoadResult.CLEAR => beadRoad.Reset()
+          case _ => {
+            beadRoad.AddElement(result)
+          }
         }
+        model.saveData()
       }
-      model.saveData()
-    }
     }
 
   def focusNext(): Unit = {
@@ -359,16 +387,17 @@ class DisplayHandlerNepal
     lList(mIndex).requestFocus()
   }
 
-  lastWinPause.setOnFinished {
-    e => dynamicResult.setVisible(false)
+  lastWinPause.setOnFinished { e =>
+    dynamicResult.setVisible(false)
   }
 
   //Load the saved results
-  data.results.foreach {
-    result => beadRoad.AddElement(result)
+  data.results.foreach { result =>
+    beadRoad.AddElement(result)
   }
 
   footing.setText("Powered By Tykhe Gaming Pvt. Ltd.")
+
 
 
   display.root.setOnCloseRequest(_ => {
