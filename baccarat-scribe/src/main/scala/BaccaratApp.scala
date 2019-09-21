@@ -2,7 +2,7 @@ import java.net.NetworkInterface
 import java.nio.file.{Path, Paths, WatchEvent}
 import java.util.{Locale, ResourceBundle}
 
-import cats.effect.IO
+import cats.effect.{ExitCode, IO, IOApp}
 import com.sun.nio.file.SensitivityWatchEventModifier
 import customjavafx.scene.control.BeadRoadResult
 import fs2.io.Watcher
@@ -12,35 +12,25 @@ import fx.io.syntax._
 import javafx.scene.Cursor
 import javafx.stage.StageStyle
 import scodec.bits.ByteVector
+import host.SecureApp
 
 import scala.collection.JavaConverters._
 import scala.xml.XML
 
-object BaccaratApp extends Display.App {
+object BaccaratApp extends IOApp with Display.App with SecureApp {
 
-  def macAddresses: List[String] =
-    NetworkInterface.getNetworkInterfaces.asScala.flatMap(i => Option(i.getHardwareAddress)).map(ByteVector(_).toHex).toList
-
-  val mainWindow: IO[Display.Window] = for {
+  override def run(args: List[String]): IO[ExitCode] = for {
+    _ <- verifyHost[IO]
     _ <- IO(println("starting billboard..."))
-//        resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("en", "CA")))
     resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
-    actual  = macAddresses
-    expected = List("1c1b0d9c24e0", "e0d55e55809c", "80ce62eb8f72", "70c94e69f961", "80ce62ebc36c",
-      "70c94e69c271", "70c94e69c293", "70c94e69c2a3", "70c94e69d0bf", "70c94e69d9b7", "70c94e69ec3f",
-      "70c94e69f961", "70c94e69f9df", "70c94e6a073f", "70c94e6c6e45", "80ce62ebc68e", "70c94e69f923",
-      "7440bb622e05","7440bb66447b","7440bb651f6b","7440bba3bac9","7440bb6645e7","7440bb65befb","7440bb638e75","7440bb6644ff",
-      "509a4c3c9f19","f48e38a3a78c","94c691a8e991","f439092ca4b7","52540018fb65")
-    _ <- IO(require(actual.exists(expected.contains), "Error: Non Compatible Machine Found!"))
-    _ <- IO(println("loading window..."))
+    //    resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
     reader <- watch(Paths.get(pureconfig.loadConfigOrThrow[String]("result"))).fxReader
-  } yield
-    Display.Window(
+    window = Display.Window(
       fxml = "baccarat-nepal-cmg.fxml",
       position = Position(Some(pureconfig.loadConfigOrThrow[Double]("window.position.x")),
-                          Some(pureconfig.loadConfigOrThrow[Double]("window.position.y"))),
+        Some(pureconfig.loadConfigOrThrow[Double]("window.position.y"))),
       bounds = Bounds(width = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.width.exact"))),
-                      height = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.height.exact")))),
+        height = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.height.exact")))),
       fullscreen = false,
       alwaysOnTop = true,
       style = StageStyle.UNDECORATED,
@@ -48,17 +38,15 @@ object BaccaratApp extends Display.App {
       resolver = resBundle.fxResolver ++ reader.fxResolver,
       cursor = Cursor.NONE
     )
-
-  override def window: IO[Display.Window] = mainWindow
-
-
+    _ <- launch(window)(args)
+  } yield ExitCode.Success
 
   def watch(path: Path): fs2.Stream[IO, BeadRoadResult] =
     fs2.io.file
       .watch[IO](
-        path,
-        types = List(Watcher.EventType.Created, Watcher.EventType.Modified),
-        modifiers = List(SensitivityWatchEventModifier.HIGH))
+      path,
+      types = List(Watcher.EventType.Created, Watcher.EventType.Modified),
+      modifiers = List(SensitivityWatchEventModifier.HIGH))
       .collect {
         case Watcher.Event.Created(p, _)  => p
         case Watcher.Event.Modified(p, _) => p
