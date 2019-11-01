@@ -13,8 +13,8 @@ lazy val `baccarat-scribe` = project
   .settings(libraryDependencies += "org.reactfx" % "reactfx" % "2.0-M5")
   .settings(libraryDependencies += "org.scodec" %% "scodec-bits" % "1.1.5")
   .settings(libraryDependencies += "com.tykhe.fx" %% "fx-io" % "5.0.0")
-  .settings(libraryDependencies += "co.fs2" %% "fs2-core" % "0.10.4")
-  .settings(libraryDependencies += "co.fs2" %% "fs2-io" % "0.10.4")
+  .settings(libraryDependencies += "co.fs2" %% "fs2-core" % "1.0.3")
+  .settings(libraryDependencies += "co.fs2" %% "fs2-io" % "1.0.3")
   .settings(libraryDependencies += "org.scalafx" %% "scalafxml-core-sfx8" % "0.4")
   .settings(libraryDependencies += "com.tykhe.host" %% "host-security" % "0.0.2-bacc779")
   .settings(

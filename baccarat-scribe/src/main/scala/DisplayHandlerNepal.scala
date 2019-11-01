@@ -192,8 +192,10 @@ class DisplayHandlerNepal(
 
   // callback registration
   sodium.Stream.shift(reader.valueProperty().updates).foreach { result =>
-    beadRoad.AddElement(result)
-    model.saveData()
+    if(BeadRoadResult.EMPTY != result) {
+      beadRoad.AddElement(result)
+      model.saveData()
+    }
   }
   // start service after callback registration to ensure no updates are missed
   reader.start()

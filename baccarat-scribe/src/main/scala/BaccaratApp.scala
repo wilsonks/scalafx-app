@@ -1,4 +1,3 @@
-import java.net.NetworkInterface
 import java.nio.file.{Path, Paths, WatchEvent}
 import java.util.{Locale, ResourceBundle}
 
@@ -9,37 +8,14 @@ import fs2.io.Watcher
 import fx.io.Display.{Bounds, Dimension, Position}
 import fx.io._
 import fx.io.syntax._
+
 import javafx.scene.Cursor
 import javafx.stage.StageStyle
-import scodec.bits.ByteVector
 import host.SecureApp
 
-import scala.collection.JavaConverters._
 import scala.xml.XML
 
 object BaccaratApp extends IOApp with Display.App with SecureApp {
-
-  override def run(args: List[String]): IO[ExitCode] = for {
-    _ <- verifyHost[IO]
-    _ <- IO(println("starting billboard..."))
-    resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
-    //    resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
-    reader <- watch(Paths.get(pureconfig.loadConfigOrThrow[String]("result"))).fxReader
-    window = Display.Window(
-      fxml = "baccarat-nepal-cmg.fxml",
-      position = Position(Some(pureconfig.loadConfigOrThrow[Double]("window.position.x")),
-        Some(pureconfig.loadConfigOrThrow[Double]("window.position.y"))),
-      bounds = Bounds(width = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.width.exact"))),
-        height = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.height.exact")))),
-      fullscreen = false,
-      alwaysOnTop = true,
-      style = StageStyle.UNDECORATED,
-      resources = resBundle,
-      resolver = resBundle.fxResolver ++ reader.fxResolver,
-      cursor = Cursor.NONE
-    )
-    _ <- launch(window)(args)
-  } yield ExitCode.Success
 
   def watch(path: Path): fs2.Stream[IO, BeadRoadResult] =
     fs2.io.file
@@ -91,6 +67,36 @@ object BaccaratApp extends IOApp with Display.App with SecureApp {
         case (_, "TIE", "BANKER", "YES") => BeadRoadResult.TIE_WIN_BANKER_PAIR_NATURAL
         case (_, "TIE", "PLAYER", "YES") => BeadRoadResult.TIE_WIN_PLAYER_PAIR_NATURAL
         case (_, "TIE", "BOTH", "YES")   => BeadRoadResult.TIE_WIN_BOTH_PAIR_NATURAL
+        case _ => {
+          println(s"Bad Input=> Winner=$winner Pair=$pair, Natural=$natural")
+          BeadRoadResult.EMPTY
+        }
       }
     }
+
+  override def run(args: List[String]): IO[ExitCode] = for {
+    _ <- verifyHost[IO]
+    _ <- IO(println("starting billboard..."))
+    resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
+    //    resBundle = Option(ResourceBundle.getBundle("Bundle", new Locale("zh", "CN")))
+    reader <- watch(Paths.get(pureconfig.loadConfigOrThrow[String]("result"))).fxReader
+
+    window = Display.Window(
+      fxml = "baccarat-nepal-cmg.fxml",
+      position = Position(Some(pureconfig.loadConfigOrThrow[Double]("window.position.x")),
+        Some(pureconfig.loadConfigOrThrow[Double]("window.position.y"))),
+      bounds = Bounds(width = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.width.exact"))),
+        height = Dimension(exact = Some(pureconfig.loadConfigOrThrow[Double]("window.height.exact")))),
+      fullscreen = false,
+      alwaysOnTop = true,
+      style = StageStyle.UNDECORATED,
+      resources = resBundle,
+      resolver = resBundle.fxResolver ++ reader.fxResolver,
+      cursor = Cursor.NONE
+    )
+    _ <- launch(window)(args)
+  } yield ExitCode.Success
+
+
 }
+

@@ -622,7 +622,7 @@ turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen*/
 
 
 .betsLogo {
-	-fx-background-image: url("../images/empty.png");
+	-fx-background-image: url("../images/logo-cmg-1.png");
 	-fx-background-position:center;
 	-fx-background-repeat: no-repeat ;
 	-fx-background-size: contain;
